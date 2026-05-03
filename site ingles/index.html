@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>What Are Computers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>What Are Computers</h1>
+    <p>Learn the basics of computers</p>
+</header>
+
+
+<div class="menu">
+    <button onclick="showSection('chronology')">Chronology</button>
+    <button onclick="showSection('components')">Components</button>
+    <button onclick="showSection('about')">About Computers</button>
+</div>
+
+
+<section id="chronology" class="section active">
+    <h2>Computer History Timeline</h2>
+
+    <div class="timeline">
+
+    <div class="event" onclick="openTimeline('1940s')">1940s</div>
+    <div class="event" onclick="openTimeline('1950s')">1950s</div>
+    <div class="event" onclick="openTimeline('1960s')">1960s</div>
+    <div class="event" onclick="openTimeline('1970s')">1970s</div>
+    <div class="event" onclick="openTimeline('1980s')">1980s</div>
+    <div class="event" onclick="openTimeline('1990s')">1990s</div>
+    <div class="event" onclick="openTimeline('2000s')">2000s</div>
+    <div class="event" onclick="openTimeline('2010s')">2010s</div>
+    <div class="event" onclick="openTimeline('2020s')">2020s</div>
+
+</div>
+</section>
+
+
+<section id="components" class="section">
+    <h2>Components</h2>
+
+    <div class="components">
+
+        <div class="component" onclick="openModal('CPU')">
+            <img src="images/cpu.png" alt="CPU">
+            <p>CPU</p>
+        </div>
+
+        <div class="component" onclick="openModal('RAM')">
+            <img src="images/ram.png" alt="RAM">
+            <p>RAM</p>
+        </div>
+
+        <div class="component" onclick="openModal('GPU')">
+            <img src="images/gpu.png" alt="GPU">
+            <p>GPU</p>
+        </div>
+
+        <div class="component" onclick="openModal('PSU')">
+            <img src="images/psu.png" alt="Power Supply">
+            <p>Power Supply</p>
+        </div>
+
+        <div class="component" onclick="openModal('SSD')">
+            <img src="images/ssd.png" alt="SSD">
+            <p>SSD</p>
+        </div>
+
+        <div class="component" onclick="openModal('Cooler')">
+            <img src="images/cooler.png" alt="Cooler">
+            <p>Cooler</p>
+        </div>
+
+        <div class="component" onclick="openModal('Software')">
+            <img src="images/software.png" alt="Software">
+            <p>Software</p>
+        </div>
+
+        <div class="component" onclick="openModal('Browser')">
+            <img src="images/browser.png" alt="Browser">
+            <p>Browser</p>
+        </div>
+
+        <div class="component" onclick="openModal('Database')">
+            <img src="images/database.png" alt="Database">
+            <p>Database</p>
+        </div>
+
+        <div class="component" onclick="openModal('Firewall')">
+            <img src="images/firewall.png" alt="Firewall">
+            <p>Firewall</p>
+        </div>
+
+        <div class="component" onclick="openModal('Encryption')">
+            <img src="images/encryption.png" alt="Encryption">
+            <p>Encryption</p>
+        </div>
+    
+
+    </div>
+</section>
+
+
+<section id="about" class="section">
+    <h2>About Computers</h2>
+
+    <p>
+        Computers are electronic devices that process and store information. They are used in many areas of daily life, such as school, 
+        work, communication, and entertainment.
+    </p>
+
+    <p>
+        From smartphones to laptops, computers help people complete tasks quickly and efficiently.
+    </p>
+
+    <h3>How Do Computers Work?</h3>
+
+    <p>
+        Computers work by following instructions called programs. These programs tell the computer what to do.
+    </p>
+
+    <p>The process happens in three main steps:</p>
+
+    <ul>
+        <li><strong>Input</strong> – data is entered (keyboard, mouse, etc.)</li>
+        <li><strong>Processing</strong> – the computer analyzes the data</li>
+        <li><strong>Output</strong> – the result is shown (screen, sound, etc.)</li>
+    </ul>
+
+    <p>
+        This cycle happens very fast, allowing computers to perform complex tasks in seconds.
+    </p>
+
+    <h3>Conclusion</h3>
+
+    <p>
+        Computers are essential tools in modern life. They help us work, learn, and communicate more efficiently.
+        Understanding how they work helps us use them better.
+    </p>
+
+</section>
+
+
+<div id="modal" class="modal" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <h2 id="title"></h2>
+        <p id="description"></p>
+    </div>
+</div>
+
+<script>
+
+function showSection(id) {
+    const sections = document.querySelectorAll(".section");
+    sections.forEach(section => section.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+}
+
+
+function openModal(type) {
+    const modal = document.getElementById("modal");
+    const title = document.getElementById("title");
+    const description = document.getElementById("description");
+
+    if (type === "CPU") {
+        title.innerText = "CPU";
+        description.innerText = "The brain of the computer that processes instructions.";
+    }
+
+    if (type === "RAM") {
+        title.innerText = "RAM";
+        description.innerText = "Temporary memory used while programs are running.";
+    }
+
+    if (type === "GPU") {
+        title.innerText = "GPU";
+        description.innerText = "Handles graphics and visual processing.";
+    }
+
+    if (type === "PSU") {
+        title.innerText = "Power Supply";
+        description.innerText = "Provides power to all components.";
+    }
+
+    if (type === "SSD") {
+        title.innerText = "SSD";
+        description.innerText = "Fast storage device for files and systems.";
+    }
+
+    if (type === "Cooler") {
+        title.innerText = "Cooler";
+        description.innerText = "Prevents overheating of components.";
+    }
+
+    if (type === "Software") {
+        title.innerText = "Software";
+        description.innerText = "Programs and applications that run on a computer.";
+    }
+
+    if (type === "Firewall") {
+        title.innerText = "Firewall";
+        description.innerText = " A security system that protects a network.";
+    }
+
+    if (type === "Browser") {
+        title.innerText = "Browser";
+        description.innerText = "Software used to access websites (e.g., Chrome).";
+    }
+
+    if (type === "Database") {
+        title.innerText = "Database";
+        description.innerText = "A structured collection of data.";
+    }
+
+    if (type === "Encryption") {
+        title.innerText = "Encryption";
+        description.innerText = "Protecting data by converting it into a secure format.";
+    }
+
+
+    modal.style.display = "flex";
+}
+
+
+function openTimeline(year) {
+    const modal = document.getElementById("modal");
+    const title = document.getElementById("title");
+    const description = document.getElementById("description");
+
+    if (year === "1940s") {
+        title.innerText = "1940s – First Computers";
+        description.innerText = "The first electronic computers were created. They were very large and expensive. Example: ENIAC, one of the first general-purpose computers.";
+    }
+
+    if (year === "1950s") {
+        title.innerText = "1950s – Transistors";
+        description.innerText = "Computers started using transistors instead of vacuum tubes. They became smaller, faster, and more reliable.";
+    }
+
+    if (year === "1960s") {
+        title.innerText = "1960s – Integrated Circuits";
+        description.innerText = "Integrated circuits (chips) were introduced. Computers became more powerful and began to be used by companies.";
+    }
+
+    if (year === "1970s") {
+        title.innerText = "1970s – Microprocessors";
+        description.innerText = "The first microprocessors were developed. This made it possible to create personal computers.";
+    }
+
+    if (year === "1980s") {
+        title.innerText = "1980s – Personal Computers";
+        description.innerText = "Computers became available for home use. Famous examples include IBM PCs and early Apple computers.";
+    }
+
+    if (year === "1990s") {
+        title.innerText = "1990s – Internet Era";
+        description.innerText = "The internet became popular worldwide. People started using computers for communication and information.";
+    }
+
+    if (year === "2000s") {
+        title.innerText = "2000s – Laptops and Mobility";
+        description.innerText = "Laptops became more common and powerful. Wireless technology (Wi-Fi) improved connectivity.";
+    }
+
+    if (year === "2010s") {
+        title.innerText = "2010s – Smartphones and Cloud";
+        description.innerText = "Smartphones and cloud computing changed how people use technology. Data could be accessed from anywhere.";
+    }
+
+    if (year === "2020s") {
+        title.innerText = "2020s – Artificial Intelligence";
+        description.innerText = "Artificial Intelligence is becoming more advanced. Computers can learn, analyze data, and assist humans in complex tasks.";
+    }
+
+    modal.style.display = "flex";
+}
+
+
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+}
+</script>
+
+</body>
+</html>

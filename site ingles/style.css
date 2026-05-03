@@ -1,0 +1,179 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+    color: white;
+    padding: 20px;
+}
+
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: #00d4ff;
+}
+
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.menu button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #00d4ff;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.menu button:hover {
+    background: #00ffcc;
+}
+
+
+.section {
+    display: none;
+    background: rgba(255,255,255,0.05);
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.section.active {
+    display: block;
+}
+
+
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    position: relative;
+}
+
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #00d4ff;
+}
+
+
+.event {
+    position: relative;
+    background: #00d4ff;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
+    transition: 0.3s;
+}
+
+.event:hover {
+    transform: scale(1.2);
+    background: #00ffcc;
+}
+
+
+.components {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+
+.component {
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.component img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+
+
+.component p {
+    margin-top: 8px;
+    font-weight: bold;
+    color: #00d4ff;
+}
+
+
+.component:hover {
+    transform: scale(1.08);
+}
+
+.component:hover img {
+    border: 2px solid #00ffcc;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+
+.components img:hover {
+    transform: scale(1.1);
+    border: 2px solid #00d4ff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(5px);
+
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #1e1e2f;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 400px;
+    text-align: center;
+}
+
+#about p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+#about h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #00d4ff;
+}
+
+#about ul {
+    margin: 10px 0 15px 20px;
+}
